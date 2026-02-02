@@ -1,0 +1,21 @@
+# ref: https://github.com/yccyenchicheng/AutoSDF, https://github.com/CompVis/latent-diffusion/
+
+model:
+  params:
+    embed_dim: 3            #middle channel of encoder
+    n_embed: 8192           #length of codebook
+    ddconfig:
+      double_z: False       #double encoder output channel
+      z_channels: 3         #encoder output channel
+      resolution: 32        #32*32*32
+      in_channels: 1        #TUDF channel
+      out_ch: 1             #decoder output channel
+      ch: 32                
+      ch_mult: [1,2]        
+      num_res_blocks: 1
+      attn_resolutions: []
+      dropout: 0.0
+
+lossconfig:
+  params:
+    codebook_weight: 1.0

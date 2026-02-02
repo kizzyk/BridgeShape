@@ -1,0 +1,63 @@
+vqvae:
+  vq_conf: configs/vqvae_snet.yaml
+  vq_ckpt: /workspace/P2P/logs_home_32/vqvae-ControlledEPNDataset_32-03001627table-all-res32-LR1e-4-T3.0-release/ckpt/vqvae_steps-235000.pth
+data:
+  data_root: /workspace/EPN/control_data
+  workers: 4
+  per_class: True
+  class_id: '03001627'
+  suffix: .pth
+  log_df: False
+  trunc_thres: 3.0
+  representation: tsdf
+diffusion:
+  timesteps: 1000
+  sampling_timesteps: 3
+  objective: pred_noise
+  schedule: linear
+  sampling_strategy: DDPM
+  loss_type: mse
+  beta_start: 1.e-4
+  beta_end: 0.02
+  t0: 1.e-4
+  T: 1.0
+  ot_ode: true
+  add_x1_noise: true
+training:
+  optimizer:
+    type: AdamW
+    lr: 2.e-4
+    beta1: 0.9
+    beta2: 0.999
+    weight_decay: 1.0e-05
+  scheduler:
+    type: constant
+    lr_gamma: 0.999
+  grad_clip:
+    enabled: true
+    value: 1.0
+  bs: 40
+  overfit: false
+  amp: true
+  steps: 750000
+  accumulation_steps: 1
+  log_interval: 750
+  save_interval: 3750
+  viz_interval: 3750
+  seed: 42
+evaluation:
+  bs: 20
+net:
+  network: ControlledUNet
+  in_channels: 3
+  model_channels: 64
+  hint_channels: 2
+  num_res_blocks: 3
+  channel_mult:
+    - 1
+    - 2
+    - 2
+  sd_locked: True
+  use_activation: False
+dataset_config:
+  dataset: EPN
