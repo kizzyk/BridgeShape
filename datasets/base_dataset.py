@@ -35,10 +35,10 @@ def CreateDataset(opt):
     dataset = None
 
     # decide resolution later at model
-    if opt.dataset_mode == 'ControlledEPNDataset':
-        from .EPN_p import ControlledEPNDataset_change
-        train_dataset = ControlledEPNDataset_change(opt,phase='train')
-        test_dataset = ControlledEPNDataset_change(opt,phase='test')
+    if opt.dataset_mode == 'ControlledEPNDataset_32':
+        from .EPN import ControlledEPNDataset_32
+        train_dataset = ControlledEPNDataset_32(opt,phase='train')
+        test_dataset = ControlledEPNDataset_32(opt,phase='test')
     else:
         raise ValueError("Dataset [%s] not recognized." % opt.dataset_mode)
 
