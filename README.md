@@ -1,7 +1,7 @@
 # BridgeShape: Latent Diffusion Schrödinger Bridge for 3D Shape Completion [AAAI 2026]
 ## [Paper](https://arxiv.org/abs/2506.23205)
 
-Official implementation of the paper **"BridgeShape: Latent Diffusion Schrödinger Bridge for 3D Shape Completion"** (AAAI 2026).
+Official implementation of the paper **"BridgeShape: Latent Diffusion Schrödinger Bridge for 3D Shape Completion"**.
 
 
 ---
