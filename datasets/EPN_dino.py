@@ -18,16 +18,16 @@ def read_txt(path):
 
 
 def process_depth_and_normal(depth_image, normal_image):
-    # 加载和处理深度图
+    
     depth_image = np.array(depth_image).astype(np.float32)
 
-    # 假设深度值是原始深度图的灰度值，进行归一化
+    
     depth_min, depth_max = depth_image.min(), depth_image.max()
     depth_image = (depth_image - depth_min) / (depth_max - depth_min)
     depth_image = np.stack([depth_image, depth_image, depth_image], axis=-1)
 
     normal_image = np.array(normal_image).astype(np.float32)
-    normal_image = normal_image / 255  # 归一化到[0, 1]
+    normal_image = normal_image / 255  
     normal_image = normal_image[:, :, :3] * normal_image[:, :, 3:]
     return depth_image, normal_image
 
