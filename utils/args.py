@@ -21,7 +21,6 @@ def parse_args():
     parser.add_argument("--rs", type=int,default=0, help="reverse_step")
     parser.add_argument("--tbs", type=int,default=0, help="test_batch_size")
     parser.add_argument("--test_one", type=bool,default=False, help="test_one")
-    parser.add_argument("--mode", type=str,default="easy", help="mode") 
     parser.add_argument("--v", type=bool,default=False, help="vis")
     # wandb settings
     parser.add_argument("--wandb_project", type=str, default="P2P-Bridge", help="wandb project name")
