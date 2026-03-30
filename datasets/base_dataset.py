@@ -39,18 +39,6 @@ def CreateDataset(opt):
         from .EPN_p import ControlledEPNDataset_change
         train_dataset = ControlledEPNDataset_change(opt,phase='train')
         test_dataset = ControlledEPNDataset_change(opt,phase='test')
-    elif opt.dataset_mode == 'ControlledEPNDataset_32':
-        from .EPN import ControlledEPNDataset_32
-        train_dataset = ControlledEPNDataset_32(opt,phase='train')
-        test_dataset = ControlledEPNDataset_32(opt,phase='test')
-    elif opt.dataset_mode == 'ControlledEPNDataset_dino':
-        from .EPN_dino import ControlledEPNDataset_dino
-        train_dataset = ControlledEPNDataset_dino(opt,phase='train')
-        test_dataset = ControlledEPNDataset_dino(opt,phase='test')
-    elif opt.dataset_mode == 'ControlledEPNDataset_128':
-        from .EPN_128 import ControlledEPNDataset_128
-        train_dataset = ControlledEPNDataset_128(opt,phase='train')
-        test_dataset = ControlledEPNDataset_128(opt,phase='test')
     else:
         raise ValueError("Dataset [%s] not recognized." % opt.dataset_mode)
 
