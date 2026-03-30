@@ -1,0 +1,59 @@
+name: bridgeshape
+channels:
+  - conda-forge
+  - open3d-admin
+  - pytorch
+  - anaconda
+  - defaults
+dependencies:
+  - python=3.8
+  - cudatoolkit=11.3.1
+  - pytorch=1.11.0
+  - torchvision=0.12.0
+  - torchaudio=0.11.0
+  
+  - pytorch-lightning
+  - open3d
+  - numpy
+  - pillow
+  - jupyter
+  - ipython
+  - h5py
+  - opencv
+  - nltk
+  - quaternion
+  - seaborn
+  - ffmpeg
+  - beautifulsoup4
+  - requests
+  - pyzmq
+  
+  - pip:
+    - ccimport==0.4.2
+    - cumm-cu113==0.3.7
+    - spconv-cu113==2.2.6
+    - pccm==0.4.4
+    
+    - fire
+    - lark
+    - ninja
+    - portalocker
+    - pybind11
+    - pywavelets
+    - termcolor
+    - tqdm
+    - pymcubes
+    - scipy
+    - scikit-image
+    - scikit-learn
+    - matplotlib
+    - pandas
+    - hydra-core
+    - hydra-colorlog
+    - hydra-submitit-launcher
+    - tensorboard
+    - tensorboardX
+    - addict
+    - plyfile
+    - k3d
+    - trimesh
